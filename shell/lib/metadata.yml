@@ -1,0 +1,57 @@
+begin=confirm
+args=( "message" )
+opts=( 1 )
+tests=( "function test. are you sure" )
+short="operator confirmation function (e.g. are you sure?)"
+long="displays a formatted prompt, blocks until user input, returns operator response 0 (yes) or 1 (no)"
+end=confirm
+#
+begin=auhpc-partition-max-core
+args=()
+opts=()
+tests=()
+short="identify a dedicated partition with the highest number of idle cores"
+long="determines "
+fields=( "partition" "nodes" "cores" )
+pads=( 16 6 6 )
+end=auhpc-partition-max-core
+#
+begin=auhpc-partition-split-core
+args=()
+opts=()
+tests=()
+short="distribute total cores across nodes"
+long="determines "
+fields=( "partition" "size" "cores" "nodes" )
+pads=( 16 6 6 6 )
+end=auhpc-partition-split-core
+#
+begin=auhpc-lab-partitions
+args=( "filter" )
+opts=( 0 )
+fields=( "partition" )
+pads=( 16 )
+tests=( "$(groups | grep -m1 "_lab")" )
+short="list and search dedicated slurm partitions"
+long="Returns a set of dedicated slurm partitions, optionally filtered. Used primarily as a data source for\nfunctions that determine and\or validate the current operator's resource access options."
+end=auhpc-lab-partitions
+#
+begin=auhpc-pi-labs
+args=( "filter" )
+opts=( 0 )
+fields=( "research lab" )
+pads=( 21 )
+tests=( "$(groups | tr ' ' '\n' | grep -m1 _lab)" )
+short="list and search lab groups"
+long="Returns a set of research labs, optionally filtered. Used primarily as a data source for\nfunctions that determine and\or validate the current operator's resource access options."
+syntax="auhpc-pi-labs [search-string]"
+end=auhpc-pi-labs
+#
+begin=auhpc-pi-ids
+begin=auhpc-pi-email
+begin=auhpc-pi-info
+begin=auhpc-labs
+end=auhpc-labs
+begin=auhpc-lab-cores
+begin=auhpc-lab-max-cores
+begin=auhpc-lab-sub

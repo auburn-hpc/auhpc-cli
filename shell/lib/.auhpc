@@ -1,0 +1,12 @@
+#! /bin/bash
+
+#  The Auburn HPC Admins :: Bash Library
+#  ---------------------------------------------------------
+#  .auhpc | 06.07.2023
+#  script configuration & environment variables
+#  ---------------------------------------------------------
+
+export AUHPC_SETNAME="AUIVS-HPC Shell Development Library"
+export AUHPC_LOGFILE="/dev/null"
+export AUHPC_LOGLEVEL=3
+export AUHPC_LIBPATH=${PWD}
